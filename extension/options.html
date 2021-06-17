@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just open the f***g link</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="options.css" />
+    <script src="options.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="mb-3">
+        <label for="allowListBox" class="form-label">allowList:</label>
+        <textarea class="form-control" id="allowListBox" rows="12"></textarea>
+      </div>
+    </div>
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
+      <div
+        id="toastBox"
+        class="bg-success text-white toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <strong class="me-auto" id="toastTitle"></strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+            onclick="closeToast"
+          ></button>
+        </div>
+        <div class="toast-body" id="toastContent"></div>
+      </div>
+    </div>
+  </body>
+</html>
