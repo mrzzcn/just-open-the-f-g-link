@@ -2,7 +2,7 @@ function fillAllowList() {
   chrome.storage.sync.get(['allowList'], function(result) {
     try {
       console.log('Reading [allowList] from config:', result.allowList);
-      allowListBox.value = result.allowList
+      allowListBox.value = result.allowList || ''
     } catch (error) {
       console.error(error);
     }
