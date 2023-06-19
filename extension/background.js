@@ -1,5 +1,5 @@
 
-(function(window) {
+(function() {
   "use strict";
   const allowList = []
 
@@ -16,14 +16,11 @@
       console.log('onCompleted', url)
       if (allowList.some(allowPrefix => url.indexOf(allowPrefix) === 0)) {
         console.log('matched', url)
-        chrome.tabs.executeScript(
-          tabId,
+        chrome.scripting.executeScript(
           {
-            file: `open-link.js`
+            target: {tabId},
+            files: [`open-link.js`],
           },
-          () => {
-
-          }
         );
       }
     });
@@ -47,4 +44,4 @@
   }
 
   main();
-})(window);
+})();
